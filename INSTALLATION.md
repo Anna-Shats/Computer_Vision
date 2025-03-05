@@ -1,0 +1,76 @@
+# Installation Guide
+
+## System Requirements
+- Python 3.12
+- Webcam or RGB camera
+- 4GB RAM minimum (8GB recommended)
+- 2GB free disk space
+
+## Setting Up the Environment
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/your-username/smart-eye-tracking-shelves.git
+cd smart-eye-tracking-shelves
+```
+
+### Step 2: Create a Virtual Environment
+```bash
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Verify Installation
+```bash
+python -c "import cv2; import mediapipe; import numpy; import matplotlib; import PyQt5; print('All dependencies successfully installed!')"
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **OpenCV Installation Fails**
+   ```bash
+   pip install --upgrade pip
+   pip install opencv-python --force-reinstall
+   ```
+
+2. **MediaPipe Compatibility**
+   If you encounter issues with MediaPipe, try:
+   ```bash
+   pip uninstall mediapipe
+   pip install mediapipe==0.10.9
+   ```
+
+3. **PyQt5 Installation Issues**
+   For macOS, you might need to install additional packages:
+   ```bash
+   brew install pyqt5
+   ```
+   
+   For Ubuntu/Debian:
+   ```bash
+   sudo apt-get install python3-pyqt5
+   ```
+
+## Camera Setup
+
+1. Ensure your camera is properly connected and recognized by your system
+2. For optimal eye-tracking performance, the camera should be:
+   - Positioned at eye level relative to the average customer
+   - Have unobstructed view of the shelf and customer
+   - In an area with consistent lighting
+
+## Next Steps
+
+After successful installation, refer to the `USAGE.md` file for instructions on how to run the system. 
