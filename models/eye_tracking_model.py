@@ -281,7 +281,9 @@ class EyeTracker:
         Returns:
             MediaPipe landmark list proto
         """
-        landmark_list = self.mp_face_mesh.LandmarkList()
+        from mediapipe.framework.formats import landmark_pb2
+    
+        landmark_list = landmark_pb2.NormalizedLandmarkList()
         
         for landmark in landmarks:
             x, y, z = landmark
