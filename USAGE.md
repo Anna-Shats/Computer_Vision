@@ -35,6 +35,7 @@ You can customize the system behavior by modifying the `config.py` file:
 - `DETECTION_THRESHOLD`: Adjust the confidence threshold for eye detection
 - `RECORDING_ENABLED`: Enable/disable data recording
 - `VISUALIZATION_LEVEL`: Set level of real-time visualization (0=none, 1=basic, 2=detailed)
+- `DATA_DIR`: Set the directory for storing session data and reports (default: "data")
 
 ### Command Line Options
 
@@ -68,6 +69,7 @@ The dashboard contains the following sections:
 - `R`: Start/stop recording session
 - `H`: Toggle heatmap visualization
 - `S`: Save current analytics snapshot
+- `G`: Generate analytics report
 - `Esc`: Exit application
 
 ## Data Analysis
@@ -79,23 +81,28 @@ The dashboard contains the following sections:
 3. Select the time range for the data export
 4. Specify the export location
 
+### Generating Reports
+
+1. Click the "Generate Report" button in the dashboard or press `G`
+2. Select the output directory for the report
+3. The system will generate a comprehensive HTML report with:
+   - Attention heatmap visualization
+   - Product attention chart showing time spent on each product
+   - Timeline visualization of attention patterns
+   - Category breakdown chart
+   - Tables of most and least viewed products
+   - Key metrics and statistics
+
+4. After generation, you'll be prompted to open the report in your browser
+
 ### Interpreting Results
 
 - **Attention Time**: Duration (in seconds) customers looked at each product
 - **Gaze Patterns**: Sequence of products viewed in typical customer journey
 - **Engagement Score**: Combined metric of frequency and duration of views
 - **Blind Spots**: Areas with less than 5% of total attention
-
-## Self-Checkout Integration
-
-To enable eye-tracking for self-checkout systems:
-
-1. Connect the camera facing the customer at the self-checkout kiosk
-2. Run with the checkout module enabled:
-   ```bash
-   python main.py --mode checkout
-   ```
-3. The system will track eye movements during the checkout process and provide UI/UX insights
+- **Category Performance**: How different product categories compare in attracting attention
+- **Ignored Products**: Products that received no attention during the session
 
 ## Troubleshooting
 
@@ -103,8 +110,10 @@ To enable eye-tracking for self-checkout systems:
 - **High CPU Usage**: Lower the VISUALIZATION_LEVEL in config.py
 - **Data Not Saving**: Check write permissions for the output directory
 - **Camera Not Detected**: Try specifying the camera index explicitly with --camera
-
-## Additional Resources
-
-- Sample data sets are available in the `data/samples/` directory
-- Example reports can be found in `docs/example_reports/` 
+- **Report Generation Issues**: 
+  - Make sure the data directory exists and is writable
+  - Check logs for any specific error messages
+  - Try generating reports from existing session data using the test script:
+    ```bash
+    python test_report.py
+    ```

@@ -5,6 +5,7 @@
 - Webcam or RGB camera
 - 4GB RAM minimum (8GB recommended)
 - 2GB free disk space
+- Modern web browser for viewing HTML reports
 
 ## Setting Up the Environment
 
@@ -32,7 +33,7 @@ pip install -r requirements.txt
 
 ### Step 4: Verify Installation
 ```bash
-python -c "import cv2; import mediapipe; import numpy; import matplotlib; import PyQt5; print('All dependencies successfully installed!')"
+python -c "import cv2; import mediapipe; import numpy; import matplotlib; import PyQt5; import pandas; print('All dependencies successfully installed!')"
 ```
 
 ## Troubleshooting
@@ -63,6 +64,13 @@ python -c "import cv2; import mediapipe; import numpy; import matplotlib; import
    sudo apt-get install python3-pyqt5
    ```
 
+4. **Matplotlib or Pandas Issues**
+   If you encounter issues with these libraries:
+   ```bash
+   pip uninstall matplotlib pandas
+   pip install matplotlib pandas --force-reinstall
+   ```
+
 ## Camera Setup
 
 1. Ensure your camera is properly connected and recognized by your system
@@ -70,6 +78,12 @@ python -c "import cv2; import mediapipe; import numpy; import matplotlib; import
    - Positioned at eye level relative to the average customer
    - Have unobstructed view of the shelf and customer
    - In an area with consistent lighting
+
+## Data Storage Setup
+
+1. The system will automatically create a `data` directory for storing session data and reports
+2. Ensure the application has write permissions to this directory
+3. Reports are generated as HTML files with supporting images, viewable in any modern web browser
 
 ## Next Steps
 

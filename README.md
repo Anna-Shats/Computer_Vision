@@ -10,6 +10,7 @@ An AI-powered solution for analyzing customer interactions with retail shelves t
 - **Purchase Decision Insights**: See where shoppers look before making a purchase
 - **Blind Spot Identification**: Identify areas of the shelf that are ignored
 - **Self-Checkout Integration**: Track user experience at self-checkout systems
+- **Comprehensive Reports**: Generate detailed HTML reports with visualizations and metrics
 
 ## System Components
 
@@ -18,6 +19,7 @@ An AI-powered solution for analyzing customer interactions with retail shelves t
 3. **Shelf Analysis**: Maps eye coordinates to products on shelves
 4. **Data Collection**: Stores tracking data for future analysis
 5. **Analytics Dashboard**: Visualizes insights from the collected data
+6. **Report Generator**: Creates comprehensive HTML reports with charts and metrics
 
 ## Requirements
 
@@ -27,6 +29,7 @@ An AI-powered solution for analyzing customer interactions with retail shelves t
 - NumPy
 - Matplotlib (for visualizations)
 - PyQt5 (for dashboard UI)
+- Pandas (for data analysis)
 
 ## Installation
 
